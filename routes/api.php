@@ -24,6 +24,7 @@ Route::controller(StudentController::class)->group(function () {
     Route::get('/student', 'index');
     Route::post('/student', 'registerEnrollment');
     Route::get('/student/{id}', 'showCoursesByStudentId');
+    Route::post('/student/create', 'createStudent');
 });
 
 Route::controller(CourseController::class)->group(function () {
