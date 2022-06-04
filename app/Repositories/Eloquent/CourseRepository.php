@@ -14,6 +14,11 @@ class CourseRepository implements CourseRepositoryInterface
         $this->model = app(Course::class);
     }
 
+    public function getModel()
+    {
+        return $this->model;
+    }
+
     public function getAllCourses()
     {
         return $this->model->all();
