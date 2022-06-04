@@ -19,4 +19,8 @@ class StudentRepository implements StudentRepositoryInterface
         return $this->student;
     }
 
+    public function getAllStudents()
+    {
+        return $this->student->all();
+    }
 }
