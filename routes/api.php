@@ -29,4 +29,5 @@ Route::controller(StudentController::class)->group(function () {
 Route::controller(CourseController::class)->group(function () {
     Route::get('/course', 'index');
     Route::post('/course', 'store');
+    Route::put('/course/{id}', 'update');
 });
