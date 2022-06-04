@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->date('birth_date')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->mediumText('title');
             $table->longText('description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
