@@ -30,4 +30,9 @@ class CourseService
     {
         return $this->courseService->getModel()->find($id)->update($data);
     }
+
+    public function deleteCourse($id)
+    {
+        return $this->courseService->getModel()->find($id)->delete();
+    }
 }
