@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateCourseRequest;
+use App\Http\Requests\CreateOrUpdateCourseRequest;
 use App\Http\Responses\ApiResponse;
 use App\Services\CourseService;
-use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
@@ -27,7 +26,7 @@ class CourseController extends Controller
         }
     }
 
-    public function store(CreateCourseRequest $request)
+    public function store(CreateOrUpdateCourseRequest $request)
     {
         try {
             $data = $request->all();
