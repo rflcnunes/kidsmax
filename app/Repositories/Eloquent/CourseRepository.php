@@ -24,4 +24,9 @@ class CourseRepository implements CourseRepositoryInterface
         return $this->model->all();
     }
 
+    public function getCourseById($id)
+    {
+        return $this->model->find($id);
+    }
+
 }
