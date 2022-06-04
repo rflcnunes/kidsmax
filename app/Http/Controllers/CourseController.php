@@ -38,4 +38,17 @@ class CourseController extends Controller
             return new ApiResponse(false, $e->getMessage(), null, 500);
         }
     }
+
+    public function update(CreateOrUpdateCourseRequest $request, $id)
+    {
+        try {
+            $data = $request->all();
+
+            $courses = $this->courseService->updateCourse($id, $data);
+
+            return new ApiResponse(true, 'Course updated successfully', $courses, 201);
+        } catch (\Exception $e) {
+            return new ApiResponse(false, $e->getMessage(), null, 500);
+        }
+    }
 }
