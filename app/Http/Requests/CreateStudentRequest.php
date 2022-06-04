@@ -24,10 +24,10 @@ class CreateStudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|max:150',
-            'cpf' => 'string|max:11',
-            'email ' => 'string|max:255',
-            'birth_date' => 'date',
+            'name' => 'required|string|max:150',
+            'cpf' => 'required|string|max:11',
+            'email ' => 'required|string|max:255',
+            'birth_date' => 'required|date',
         ];
     }
 }
