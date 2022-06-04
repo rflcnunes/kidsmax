@@ -20,4 +20,9 @@ class CourseService
     {
         return $this->courseService;
     }
+
+    public function createCourse($data)
+    {
+        return $this->courseService->getModel()->create($data);
+    }
 }
