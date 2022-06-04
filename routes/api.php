@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(StudentController::class)->group(function () {
     Route::get('/student', 'index');
+    Route::post('/student', 'registerEnrollment');
 });
