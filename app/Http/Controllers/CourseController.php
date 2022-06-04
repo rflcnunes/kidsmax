@@ -73,4 +73,15 @@ class CourseController extends Controller
             return new ApiResponse(false, $e->getMessage(), null, 500);
         }
     }
+
+    public function getTrashedCourses()
+    {
+        try {
+            $data = $this->courseService->getCourseRepository()->getTrashedCourses();
+
+            return new ApiResponse(true, 'All trashed courses', $data, 200);
+        } catch (\Exception $e) {
+            return new ApiResponse(false, $e->getMessage(), null, 500);
+        }
+    }
 }
