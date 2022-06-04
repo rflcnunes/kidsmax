@@ -18,6 +18,11 @@ class StudentService
         return $this->studentRepository;
     }
 
+    public function createStudent($data)
+    {
+        return $this->studentRepository->getModel()->create($data);
+    }
+
     public function registerEnrollment($id, $courseId)
     {
         return $this->studentRepository->getModel()->find($id)->courses()->attach($courseId);
