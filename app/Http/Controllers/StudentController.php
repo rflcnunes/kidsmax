@@ -56,4 +56,23 @@ class StudentController extends Controller
         }
     }
 
+    public function showCoursesByStudentId($id)
+    {
+        try {
+            $data = $this->studentService->getStudentRepository()->getCoursesByStudentId($id);
+
+            return new ApiResponse(
+                true,
+                'Courses found by Student',
+                $data,
+                200);
+        } catch (\Exception $e) {
+            return new ApiResponse(
+                false,
+                $e->getMessage(),
+                null,
+                500);
+        }
+    }
+
 }
