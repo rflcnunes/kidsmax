@@ -14,4 +14,9 @@ class StudentRepository implements StudentRepositoryInterface
         $this->student = app(Student::class);
     }
 
+    public function getModel()
+    {
+        return $this->student;
+    }
+
 }
