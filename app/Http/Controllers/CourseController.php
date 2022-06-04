@@ -51,4 +51,15 @@ class CourseController extends Controller
             return new ApiResponse(false, $e->getMessage(), null, 500);
         }
     }
+
+    public function getCourseById($id)
+    {
+        try {
+            $data = $this->courseService->getCourseRepository()->getCourseById($id);
+
+            return new ApiResponse(true, 'Course found', $data, 200);
+        } catch (\Exception $e) {
+            return new ApiResponse(false, $e->getMessage(), null, 500);
+        }
+    }
 }
