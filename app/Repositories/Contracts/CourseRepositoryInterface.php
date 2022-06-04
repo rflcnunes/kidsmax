@@ -7,4 +7,5 @@ interface CourseRepositoryInterface
     public function getModel();
     public function getAllCourses();
     public function getCourseById($id);
+    public function getTrashedCourses();
 }

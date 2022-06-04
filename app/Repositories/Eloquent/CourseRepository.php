@@ -29,4 +29,9 @@ class CourseRepository implements CourseRepositoryInterface
         return $this->model->find($id);
     }
 
+    public function getTrashedCourses()
+    {
+        return $this->model->onlyTrashed()->get();
+    }
+
 }
