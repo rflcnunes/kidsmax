@@ -84,4 +84,15 @@ class CourseController extends Controller
             return new ApiResponse(false, $e->getMessage(), null, 500);
         }
     }
+
+    public function definitivelyDelete($id)
+    {
+        try {
+            $data = $this->courseService->definitiveDeleteCourse($id);
+
+            return new ApiResponse(true, 'Course deleted successfully', $data, 200);
+        } catch (\Exception $e) {
+            return new ApiResponse(false, $e->getMessage(), null, 500);
+        }
+    }
 }
