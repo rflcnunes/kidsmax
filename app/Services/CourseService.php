@@ -25,4 +25,9 @@ class CourseService
     {
         return $this->courseService->getModel()->create($data);
     }
+
+    public function updateCourse($id, $data)
+    {
+        return $this->courseService->getModel()->find($id)->update($data);
+    }
 }
