@@ -12,4 +12,9 @@ class StudentService
     {
         $this->studentRepository = $studentRepository;
     }
+
+    public function getStudentRepository(): StudentRepositoryInterface
+    {
+        return $this->studentRepository;
+    }
 }
