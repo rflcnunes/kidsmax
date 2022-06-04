@@ -33,4 +33,5 @@ Route::controller(CourseController::class)->group(function () {
     Route::get('/course/{id}', 'getCourseById');
     Route::delete('/course/{id}', 'delete');
     Route::get('/trashed-courses', 'getTrashedCourses');
+    Route::delete('/force-delete/{id}', 'definitivelyDelete');
 });
