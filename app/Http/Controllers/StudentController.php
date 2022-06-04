@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateStudentRequest;
 use App\Http\Requests\RegisterEnrollmentRequest;
 use App\Http\Responses\ApiResponse;
 use App\Services\StudentService;
@@ -33,6 +34,28 @@ class StudentController extends Controller
                 500);
         }
     }
+
+    public function createStudent(CreateStudentRequest $request)
+    {
+        try {
+            $data = $request->all();
+
+            $students = $this->studentService->createStudent($data);
+
+            return new ApiResponse(
+                true,
+                'Student created successfully',
+                $students,
+                201);
+        } catch (\Exception $e) {
+            return new ApiResponse(
+                false,
+                $e->getMessage(),
+                null,
+                500);
+        }
+    }
+
 
     public function registerEnrollment(RegisterEnrollmentRequest $request)
     {
