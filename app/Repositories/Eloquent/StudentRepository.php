@@ -23,4 +23,9 @@ class StudentRepository implements StudentRepositoryInterface
     {
         return $this->student->all();
     }
+
+    public function getCoursesByStudentId($id)
+    {
+        return $this->student->find($id)->courses;
+    }
 }
