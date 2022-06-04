@@ -17,4 +17,9 @@ class StudentService
     {
         return $this->studentRepository;
     }
+
+    public function registerEnrollment($id, $courseId)
+    {
+        return $this->studentRepository->getModel()->find($id)->courses()->attach($courseId);
+    }
 }
