@@ -35,4 +35,9 @@ class CourseService
     {
         return $this->courseService->getModel()->find($id)->delete();
     }
+
+    public function definitiveDeleteCourse($id)
+    {
+        return $this->courseService->getModel()->onlyTrashed()->find($id)->forceDelete();
+    }
 }
