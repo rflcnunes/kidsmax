@@ -32,4 +32,5 @@ Route::controller(CourseController::class)->group(function () {
     Route::put('/course/{id}', 'update');
     Route::get('/course/{id}', 'getCourseById');
     Route::delete('/course/{id}', 'delete');
+    Route::get('/trashed-courses', 'getTrashedCourses');
 });
