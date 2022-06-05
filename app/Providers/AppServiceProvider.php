@@ -6,6 +6,7 @@ use App\Repositories\Contracts\CourseRepositoryInterface;
 use App\Repositories\Contracts\StudentRepositoryInterface;
 use App\Repositories\Eloquent\CourseRepository;
 use App\Repositories\Eloquent\StudentRepository;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,6 +18,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        Schema::defaultStringLength(191);
+
         $this->app->bind(
           StudentRepositoryInterface::class,
           StudentRepository::class
